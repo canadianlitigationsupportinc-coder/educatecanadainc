@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educate Canada Inc. | Student Recruitment & Educational Consulting Mississauga</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: {
+                            50: '#fef2f2',
+                            100: '#ffe1e1',
+                            500: '#ef4444',
+                            600: '#dc2626', // Primary Brand Red from logo
+                            700: '#b91c1c', // Dark Crimson
+                            800: '#991b1b',
+                        },
+                        navyDark: '#0f172a',
+                        navySlate: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg-overlay {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.4) 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -10px rgba(220, 38, 38, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-brandRed-600 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-slate-900 text-slate-200 py-2.5 px-4 text-xs sm:text-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-center sm:text-left">
+                <span class="inline-flex items-center gap-1.5 text-white font-bold bg-brandRed-600 px-2.5 py-0.5 rounded-full text-xs">
+                    Mississauga Office
+                </span>
+                <span class="text-slate-300 font-medium">Unit 1B-220, 7125 Goreway Drive, Mississauga, ON L4T 0B4</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs font-semibold">
+                <a href="tel:4166661791" class="hover:text-brandRed-400 transition-colors flex items-center gap-2 text-white">
+                    <i class="fa-solid fa-phone text-brandRed-500"></i> 416-666-1791
+                </a>
+                <a href="mailto:info@educatecanada.com" class="hover:text-brandRed-400 transition-colors hidden md:flex items-center gap-2 text-slate-300">
+                    <i class="fa-solid fa-envelope text-brandRed-500"></i> info@educatecanada.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo Integration -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <img src="1000126882.jpg" alt="Educate Canada Inc. Official Logo" class="h-12 sm:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/150x150/dc2626/ffffff?text=Educate+Canada';">
+                    <div class="hidden sm:block">
+                        <div class="font-extrabold text-xl tracking-tight text-slate-900 leading-none group-hover:text-brandRed-600 transition-colors">
+                            EDUCATE CANADA <span class="text-brandRed-600">INC.</span>
+                        </div>
+                        <div class="text-[11px] font-bold tracking-wider uppercase text-slate-500 mt-1">Educational Consulting & Student Recruitment</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8 font-bold text-slate-700 text-sm">
+                    <a href="#about" class="hover:text-brandRed-600 transition-colors">About Us</a>
+                    <a href="#services" class="hover:text-brandRed-600 transition-colors">Services</a>
+                    <a href="#partners" class="hover:text-brandRed-600 transition-colors">Partner Colleges</a>
+                    <a href="#matcher" class="hover:text-brandRed-600 transition-colors text-brandRed-600 flex items-center gap-1.5 bg-brandRed-50 px-3 py-1.5 rounded-lg border border-brandRed-100">
+                        <i class="fa-solid fa-graduation-cap"></i> Admission Matcher
+                    </a>
+                    <a href="#contact" class="hover:text-brandRed-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Button & Mobile Drawer Trigger -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openConsultationModal('Header CTA')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-brandRed-600 hover:bg-brandRed-700 shadow-md shadow-brandRed-600/20 transition-all cursor-pointer">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span>Book Consultation</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-base font-bold text-slate-800 border-b border-slate-100">About Us</a>
+            <a href="#services" class="block py-2 text-base font-bold text-slate-800 border-b border-slate-100">Services</a>
+            <a href="#partners" class="block py-2 text-base font-bold text-slate-800 border-b border-slate-100">Partner Colleges</a>
+            <a href="#matcher" class="block py-2.5 text-base font-bold text-brandRed-600 bg-brandRed-50 px-3 rounded-lg border border-brandRed-100">
+                <i class="fa-solid fa-graduation-cap mr-2"></i> Program Eligibility Matcher
+            </a>
+            <a href="#contact" class="block py-2 text-base font-bold text-slate-800 border-b border-slate-100">Contact & Map</a>
+            <div class="pt-2">
+                <button onclick="openConsultationModal('Mobile Menu')" class="w-full py-3 rounded-xl font-bold text-white bg-brandRed-600 hover:bg-brandRed-700 shadow-md text-center">
+                    Book Consultation Appointment
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Authentic Photography -->
+    <section class="relative bg-slate-900 text-white border-b border-slate-800 overflow-hidden min-h-[620px] flex items-center">
+        <!-- Real Authentic High-Res Campus Photo Background -->
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80" alt="Canadian College Campus" class="absolute inset-0 w-full h-full object-cover object-center">
+        <div class="absolute inset-0 hero-bg-overlay"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold shadow-sm">
+                        <i class="fa-solid fa-location-dot text-brandRed-500"></i> Based in Mississauga, Ontario (GTA)
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Your Trusted Gateway to <span class="text-brandRed-500">Canadian Education</span> & Career Success
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
+                        Educate Canada Inc. provides expert educational consulting, student recruitment, and college application support for domestic and international students across Mississauga and the Greater Toronto Area.
+                    </p>
+
+                    <!-- Trust Badge Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-brandRed-500 text-base"></i>
+                            <span class="text-xs font-bold text-slate-200">College Admissions</span>
+                        </div>
+                        <div class="bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-brandRed-500 text-base"></i>
+                            <span class="text-xs font-bold text-slate-200">Student Recruitment</span>
+                        </div>
+                        <div class="bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-circle-check text-brandRed-500 text-base"></i>
+                            <span class="text-xs font-bold text-slate-200">Enrollment Guidance</span>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                        <button onclick="openConsultationModal('Hero Primary CTA')" class="px-8 py-4 rounded-xl font-bold text-white bg-brandRed-600 hover:bg-brandRed-700 shadow-xl shadow-brandRed-600/30 transition-all text-center flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Book Free Consultation</span>
+                        </button>
+                        <a href="#partners" class="px-8 py-4 rounded-xl font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span>Explore Partner Colleges</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Quick Inquiry Box -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900 shadow-2xl border border-slate-100 relative">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900">Request Information</h3>
+                                <p class="text-xs text-slate-500 mt-1">Direct admission assistance for Ontario colleges</p>
+                            </div>
+                            <img src="1000126882.jpg" alt="Educate Canada Badge" class="h-10 w-auto object-contain">
+                        </div>
+
+                        <form id="hero-quick-form" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Full Name *</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-brandRed-600 focus:bg-white transition-all">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="416-666-1791" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-brandRed-600 focus:bg-white transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Preferred Institution</label>
+                                    <select class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-3 text-slate-900 text-sm focus:outline-none focus:border-brandRed-600 focus:bg-white transition-all">
+                                        <option value="General Consultation">General Consultation</option>
+                                        <option value="CDI College">CDI College</option>
+                                        <option value="Stanford International College">Stanford International College</option>
+                                        <option value="A1 Global College">A1 Global College</option>
+                                        <option value="Eight Branches College of Eastern Medicine">Eight Branches College</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Email Address *</label>
+                                <input type="email" required placeholder="name@example.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-brandRed-600 focus:bg-white transition-all">
+                            </div>
+                            <button type="submit" class="w-full py-4 px-6 rounded-xl font-bold text-white bg-brandRed-600 hover:bg-brandRed-700 transition-all text-xs uppercase tracking-wider shadow-md shadow-brandRed-600/20">
+                                Send Quick Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Real Counseling Photography -->
+    <section id="about" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Image Composition (Real Photography) -->
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Students and Advisor Consulting" class="w-full h-[400px] object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 hidden sm:flex bg-slate-900 text-white p-5 rounded-2xl shadow-xl border border-slate-800 max-w-xs items-center gap-4">
+                            <div class="w-12 h-12 bg-brandRed-600 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-award text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-extrabold text-sm text-white">Trusted GTA Agency</div>
+                                <div class="text-xs text-slate-400">Mississauga Office Location</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right About Copy -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-brandRed-600 bg-brandRed-50 px-3.5 py-1.5 rounded-full border border-brandRed-100">
+                        About Educate Canada Inc.
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Empowering Students Through Expert Academic Pathways
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        <strong>Educate Canada Inc.</strong> is a dedicated student recruitment and educational consulting firm based in Mississauga, Ontario. We bridge the gap between ambitious prospective students and premier accredited colleges across Ontario.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Whether you are a domestic student looking to upgrade your vocational skills or an international applicant seeking post-secondary enrollment in Canada, our Mississauga consulting team provides tailored guidance every step of the way.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="font-extrabold text-slate-900 text-base mb-1">Mississauga Based</div>
+                            <div class="text-xs text-slate-500">Accessible office on Goreway Drive for in-person appointments.</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="font-extrabold text-slate-900 text-base mb-1">Direct College Links</div>
+                            <div class="text-xs text-slate-500">Authorized representative for leading Ontario career institutions.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-brandRed-600 bg-brandRed-50 px-3.5 py-1.5 rounded-full border border-brandRed-100">
+                    What We Offer
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-4">
+                    Comprehensive Consulting & Enrollment Services
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    From program selection to final class registration, our experts simplify your educational pathway.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandRed-50 text-brandRed-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-brandRed-100">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 mb-2">Student Recruitment</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Connecting qualified domestic and international students with registered career colleges and academic programs in Ontario.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Service - Student Recruitment')" class="text-xs font-bold text-brandRed-600 hover:text-brandRed-700 flex items-center gap-1.5 cursor-pointer">
+                        <span>Inquire About Recruitment</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandRed-50 text-brandRed-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-brandRed-100">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 mb-2">College Admissions</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Assisting candidates with prerequisites checking, official document verification, and securing letters of acceptance.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Service - College Admissions')" class="text-xs font-bold text-brandRed-600 hover:text-brandRed-700 flex items-center gap-1.5 cursor-pointer">
+                        <span>Admissions Support</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandRed-50 text-brandRed-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-brandRed-100">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 mb-2">Application Consulting</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Step-by-step guidance on application deadlines, program fit evaluation, and formal application submissions.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Service - Application Consulting')" class="text-xs font-bold text-brandRed-600 hover:text-brandRed-700 flex items-center gap-1.5 cursor-pointer">
+                        <span>Consulting Options</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandRed-50 text-brandRed-600 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 border border-brandRed-100">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 mb-2">Enrollment Support</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Hands-on registration assistance, intake setup, orientation prep, and ongoing student support.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Service - Enrollment Support')" class="text-xs font-bold text-brandRed-600 hover:text-brandRed-700 flex items-center gap-1.5 cursor-pointer">
+                        <span>Enrollment Guidance</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Partner Institutions Section -->
+    <section id="partners" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-brandRed-600 bg-brandRed-50 px-3.5 py-1.5 rounded-full border border-brandRed-100">
+                    Partner Colleges
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-4">
+                    Our Educational Partners
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    We recruit and facilitate admissions for prestigious career colleges across Ontario.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Partner 1: CDI College -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandRed-600 text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-md shadow-brandRed-600/20">
+                            CDI
+                        </div>
+                        <h3 class="font-extrabold text-xl text-slate-900 mb-2">CDI College</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Leading career college specializing in high-demand diploma programs across Business, Healthcare, Dental, Technology, and Legal studies.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Partner - CDI College')" class="w-full py-3 bg-white border border-slate-300 hover:border-brandRed-600 hover:text-brandRed-600 font-bold rounded-xl text-xs text-slate-800 transition-all cursor-pointer">
+                        Inquire For CDI Admissions
+                    </button>
+                </div>
+
+                <!-- Partner 2: Stanford International College -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-md">
+                            SIC
+                        </div>
+                        <h3 class="font-extrabold text-xl text-slate-900 mb-2">Stanford International College</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Vocational training institute providing hands-on programs in Skilled Trades, Engineering, Quality Control, and Technology fields.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Partner - Stanford International College')" class="w-full py-3 bg-white border border-slate-300 hover:border-brandRed-600 hover:text-brandRed-600 font-bold rounded-xl text-xs text-slate-800 transition-all cursor-pointer">
+                        Inquire For Stanford Admissions
+                    </button>
+                </div>
+
+                <!-- Partner 3: A1 Global College -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandRed-600 text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-md shadow-brandRed-600/20">
+                            A1
+                        </div>
+                        <h3 class="font-extrabold text-xl text-slate-900 mb-2">A1 Global College</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Comprehensive career institute offering diploma and certificate paths in Personal Support Work, Healthcare, and Business Administration.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Partner - A1 Global College')" class="w-full py-3 bg-white border border-slate-300 hover:border-brandRed-600 hover:text-brandRed-600 font-bold rounded-xl text-xs text-slate-800 transition-all cursor-pointer">
+                        Inquire For A1 Global Admissions
+                    </button>
+                </div>
+
+                <!-- Partner 4: Eight Branches College of Eastern Medicine -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-md">
+                            8B
+                        </div>
+                        <h3 class="font-extrabold text-xl text-slate-900 mb-2">Eight Branches College of Eastern Medicine</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Specialized education provider focusing on Acupuncture, Herbal Medicine, and Integrative Holistic Healthcare training in Ontario.
+                        </p>
+                    </div>
+                    <button onclick="openConsultationModal('Partner - Eight Branches College')" class="w-full py-3 bg-white border border-slate-300 hover:border-brandRed-600 hover:text-brandRed-600 font-bold rounded-xl text-xs text-slate-800 transition-all cursor-pointer">
+                        Inquire For Eight Branches
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus & Student Community Showcase (Real Unsplash Photos) -->
+    <section class="py-20 bg-slate-900 text-white border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-white bg-brandRed-600 px-3.5 py-1.5 rounded-full">
+                    Student Life & Success
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-4">
+                    Your Path to Academic & Professional Achievement
+                </h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">
+                    Join hundreds of successful candidates who launched their Canadian educational careers with Educate Canada Inc.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Students Studying Together" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs font-bold text-brandRed-400 uppercase tracking-wider">Academic Quality</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Ontario Accredited Colleges</h4>
+                        <p class="text-xs text-slate-300 mt-1">Study in state-of-the-art facilities with experienced instructors.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=80" alt="College Campus Library" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs font-bold text-brandRed-400 uppercase tracking-wider">Expert Guidance</span>
+                        <h4 class="text-lg font-bold text-white mt-1">One-on-One Advisory</h4>
+                        <p class="text-xs text-slate-300 mt-1">Personalized assistance matching your background to the right program.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1627556592933-ffe99c1cd9eb?auto=format&fit=crop&w=800&q=80" alt="Graduation Celebration" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs font-bold text-brandRed-400 uppercase tracking-wider">Career Outcomes</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Post-Graduation Success</h4>
+                        <p class="text-xs text-slate-300 mt-1">Achieve your career ambitions in healthcare, trades, or business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Admission Inquiry Matcher Widget -->
+    <section id="matcher" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-brandRed-600 bg-brandRed-50 px-3.5 py-1.5 rounded-full border border-brandRed-100">
+                    Interactive Tool
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-4">
+                    Quick Admission Eligibility Matcher
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Select your area of interest and intended college to instantly prepare a consultation application.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 card-shadow">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Select Partner Institution</label>
+                        <select id="matcher-institution" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm font-semibold focus:outline-none focus:border-brandRed-600">
+                            <option value="CDI College">CDI College</option>
+                            <option value="Stanford International College">Stanford International College</option>
+                            <option value="A1 Global College">A1 Global College</option>
+                            <option value="Eight Branches College of Eastern Medicine">Eight Branches College of Eastern Medicine</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Field of Study Interest</label>
+                        <select id="matcher-field" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm font-semibold focus:outline-none focus:border-brandRed-600">
+                            <option value="Healthcare & Nursing Support">Healthcare & Nursing Support</option>
+                            <option value="Business Administration & Management">Business Administration & Management</option>
+                            <option value="Skilled Trades & Quality Control">Skilled Trades & Quality Control</option>
+                            <option value="Acupuncture & Eastern Medicine">Acupuncture & Eastern Medicine</option>
+                            <option value="Technology & Computer Studies">Technology & Computer Studies</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button id="generate-match-btn" class="px-8 py-3.5 bg-brandRed-600 hover:bg-brandRed-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider shadow-md shadow-brandRed-600/20 cursor-pointer">
+                        Check Availability & Setup Consultation
+                    </button>
+                </div>
+
+                <!-- Match Results Form Trigger -->
+                <div id="matcher-results" class="hidden mt-8 pt-8 border-t border-slate-200">
+                    <div class="bg-brandRed-50 border border-brandRed-200 p-4 sm:p-5 rounded-xl mb-6">
+                        <div class="text-xs font-extrabold text-brandRed-800 uppercase tracking-wider">Selected Pathway Summary:</div>
+                        <div class="text-base font-bold text-slate-900 mt-1" id="matcher-summary-text">---</div>
+                        <p class="text-xs text-slate-600 mt-1">Our Mississauga consulting team can guide you directly through prerequisites and application submission for this pathway.</p>
+                    </div>
+
+                    <form id="matcher-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" required placeholder="Your Full Name *" class="bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                            <input type="tel" required placeholder="Phone Number *" class="bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                        </div>
+                        <input type="email" required placeholder="Email Address *" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                        <button type="submit" class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider cursor-pointer">
+                            Submit Direct Admission Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section with Live Embedded Google Map -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Office Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-brandRed-600 bg-brandRed-50 px-3.5 py-1.5 rounded-full border border-brandRed-100">
+                        Contact Us
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Visit Our Mississauga Office
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We welcome students and applicants to get in touch or book an in-person appointment at our Goreway Drive office in Mississauga.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <!-- Location Card -->
+                        <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 flex items-start gap-4">
+                            <div class="w-11 h-11 bg-brandRed-600 text-white rounded-xl flex items-center justify-center text-lg shrink-0 shadow-md shadow-brandRed-600/20">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="font-extrabold text-slate-900 text-base block">Office Address</span>
+                                <p class="text-xs text-slate-600 leading-relaxed mt-0.5">
+                                    Educate Canada Inc.<br>
+                                    Unit 1B-220, 7125 Goreway Drive<br>
+                                    Mississauga, Ontario L4T 0B4, Canada
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 flex items-start gap-4">
+                            <div class="w-11 h-11 bg-brandRed-600 text-white rounded-xl flex items-center justify-center text-lg shrink-0 shadow-md shadow-brandRed-600/20">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="font-extrabold text-slate-900 text-base block">Telephone Hotline</span>
+                                <a href="tel:4166661791" class="text-brandRed-600 font-bold hover:underline text-sm block mt-0.5">416-666-1791</a>
+                            </div>
+                        </div>
+
+                        <!-- Email Card -->
+                        <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 flex items-start gap-4">
+                            <div class="w-11 h-11 bg-brandRed-600 text-white rounded-xl flex items-center justify-center text-lg shrink-0 shadow-md shadow-brandRed-600/20">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="font-extrabold text-slate-900 text-base block">Official Emails</span>
+                                <a href="mailto:info@educatecanada.com" class="text-slate-800 hover:text-brandRed-600 font-semibold text-xs block mt-0.5">info@educatecanada.com</a>
+                                <a href="mailto:educatecanada.inc@gmail.com" class="text-slate-600 hover:text-brandRed-600 text-xs block mt-0.5">educatecanada.inc@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Embedded Google Map -->
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-md h-64">
+                        <iframe 
+                            title="Educate Canada Inc Location Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.283804829398!2d-79.6418861!3d43.7046896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3a0a81d1cb53%3A0x6b6c0c29b734891b!2s7125%20Goreway%20Dr%2C%20Mississauga%2C%20ON%20L4T%200B4%2C%20Canada!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Main Consultation Booking Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-50 rounded-2xl p-6 sm:p-10 border border-slate-200 card-shadow">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Book a Consultation Session</h3>
+                        <p class="text-xs text-slate-600 mb-8">Fill out the form below and an advisor from our Mississauga office will contact you within 24 hours.</p>
+
+                        <form id="main-booking-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Full Name *</label>
+                                    <input type="text" required placeholder="First and Last Name" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="416-666-1791" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Email Address *</label>
+                                    <input type="email" required placeholder="name@example.com" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">College Preference</label>
+                                    <select class="w-full bg-white border border-slate-300 rounded-xl px-3 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                                        <option value="General Inquiry">General / Undecided</option>
+                                        <option value="CDI College">CDI College</option>
+                                        <option value="Stanford International College">Stanford International College</option>
+                                        <option value="A1 Global College">A1 Global College</option>
+                                        <option value="Eight Branches College of Eastern Medicine">Eight Branches College</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Inquiry / Message Details</label>
+                                <textarea rows="4" placeholder="Tell us about your educational background or desired career field..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 px-6 bg-brandRed-600 hover:bg-brandRed-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider shadow-md shadow-brandRed-600/20 cursor-pointer">
+                                Confirm Consultation Booking
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Modal Container -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 relative card-shadow border border-slate-200">
+            <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-4">
+                <img src="1000126882.jpg" alt="Logo" class="h-10 w-auto object-contain">
+                <div>
+                    <h4 class="font-extrabold text-slate-900 text-lg">Book Consultation</h4>
+                    <p id="modal-context-tag" class="text-xs text-brandRed-600 font-bold">General Inquiry</p>
+                </div>
+            </div>
+
+            <form id="modal-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
+                    <input type="text" required placeholder="John Doe" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone *</label>
+                        <input type="tel" required placeholder="416-666-1791" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email *</label>
+                        <input type="email" required placeholder="name@domain.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Notes / Questions</label>
+                    <textarea rows="3" placeholder="Brief details regarding your target intake or qualification..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed-600"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-brandRed-600 hover:bg-brandRed-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider shadow-md">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <img src="1000126882.jpg" alt="Educate Canada Inc. Footer Logo" class="h-12 w-auto object-contain bg-white p-1 rounded-lg">
+                        <span class="font-extrabold text-white text-lg tracking-tight">EDUCATE CANADA</span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Authorized educational consulting and student recruitment agency based in Mississauga, Ontario, Canada.
+                    </p>
+                </div>
+
+                <!-- Navigation Column -->
+                <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4 border-l-2 border-brandRed-600 pl-2">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Educate Canada</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Consulting Services</a></li>
+                        <li><a href="#partners" class="hover:text-white transition-colors">Partner Colleges</a></li>
+                        <li><a href="#matcher" class="hover:text-white transition-colors">Eligibility Matcher</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact & Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colleges Column -->
+                <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4 border-l-2 border-brandRed-600 pl-2">Partner Institutions</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li>CDI College</li>
+                        <li>Stanford International College</li>
+                        <li>A1 Global College</li>
+                        <li>Eight Branches College of Eastern Medicine</li>
+                    </ul>
+                </div>
+
+                <!-- Office Contact Column -->
+                <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4 border-l-2 border-brandRed-600 pl-2">Mississauga Office</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed space-y-1">
+                        <span class="block text-slate-200 font-semibold">Educate Canada Inc.</span>
+                        Unit 1B-220, 7125 Goreway Drive<br>
+                        Mississauga, ON L4T 0B4, Canada<br><br>
+                        Phone: <a href="tel:4166661791" class="text-white hover:text-brandRed-400 font-bold">416-666-1791</a><br>
+                        Email: info@educatecanada.com
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>
+                    &copy; <span id="year-copy"></span> Educate Canada Inc. All rights reserved.
+                </div>
+                <div class="text-slate-400 font-medium">
+                    Mississauga Educational Recruitment & Admissions
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.getElementById('year-copy').textContent = new Date().getFullYear();
+
+        // Mobile Drawer
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Admission Matcher Widget Logic
+        const generateBtn = document.getElementById('generate-match-btn');
+        const matcherResults = document.getElementById('matcher-results');
+        const summaryText = document.getElementById('matcher-summary-text');
+
+        generateBtn.addEventListener('click', () => {
+            const inst = document.getElementById('matcher-institution').value;
+            const field = document.getElementById('matcher-field').value;
+            summaryText.textContent = `${field} at ${inst}`;
+            matcherResults.classList.remove('hidden');
+            matcherResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Modal Functionality
+        const modal = document.getElementById('consultation-modal');
+        const modalTag = document.getElementById('modal-context-tag');
+
+        function openConsultationModal(context) {
+            if(modalTag) modalTag.textContent = context || 'General Consultation';
+            modal.classList.remove('hidden');
+        }
+
+        function closeConsultationModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeConsultationModal();
+        });
+
+        // Form Submit Feedback Logic (WCAG safe UI feedback without window.alert)
+        function handleFormSubmit(formId) {
+            const form = document.getElementById(formId);
+            if (!form) return;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const origHtml = btn.innerHTML;
+
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Submitting...';
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Request Received!';
+                    btn.classList.remove('bg-brandRed-600', 'bg-slate-900');
+                    btn.classList.add('bg-emerald-600');
+                    form.reset();
+
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = origHtml;
+                        btn.classList.remove('bg-emerald-600');
+                        btn.classList.add('bg-brandRed-600');
+                        if (formId === 'modal-form') closeConsultationModal();
+                    }, 3500);
+                }, 1000);
+            });
+        }
+
+        handleFormSubmit('hero-quick-form');
+        handleFormSubmit('matcher-form');
+        handleFormSubmit('main-booking-form');
+        handleFormSubmit('modal-form');
+    </script>
+</body>
+</html>
